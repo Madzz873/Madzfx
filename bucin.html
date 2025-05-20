@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Web Bucin Interaktif</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500&display=swap');
+
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #ffe1e6, #fffaf0);
+    font-family: 'Quicksand', sans-serif;
+    color: #d35400;
+    text-align: center;
+    padding: 50px 20px;
+    user-select: none;
+    overflow-x: hidden;
+  }
+
+  h2 {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease forwards;
+    opacity: 0;
+  }
+
+  input[type="text"] {
+    padding: 12px 20px;
+    font-size: 1.3em;
+    border: 2px solid #d35400;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: 0 0 8px rgba(211, 84, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+
+  input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 15px #d35400;
+  }
+
+  button {
+    margin-left: 15px;
+    padding: 12px 25px;
+    font-size: 1.3em;
+    border: none;
+    background-color: #d35400;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Pacifico', cursive;
+    box-shadow: 0 0 10px #d35400;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+  }
+
+  button:hover {
+    background-color: #e67e22;
+    box-shadow: 0 0 20px #e67e22;
+  }
+
+  #step2 {
+    display: none;
+  }
+
+  #headerBox {
+    margin: 0 auto 30px auto;
+    max-width: 360px;
+    background: #fff0f5;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(211, 84, 0, 0.4);
+    padding: 25px 20px 40px 20px;
+    position: relative;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  #fromMadzz {
+    font-family: 'Pacifico', cursive;
+    color: #d35400;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    animation: glow 2.5s ease-in-out infinite alternate;
+  }
+
+  #bearBox {
+    background: white;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 5px 18px rgba(211, 84, 0, 0.3);
+    position: relative;
+  }
+
+  #bearBox img {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  #greeting {
+    font-size: 2em;
+    font-family: 'Pacifico', cursive;
+    margin-top: 15px;
+    color: #d35400;
+    text-shadow: 1px 1px 3px rgba(255, 123, 0, 0.8);
+  }
+
+  #loveButton {
+    display: inline-block;
+    margin-top: 25px;
+    font-size: 2.2em;
+    color: white;
+    background-color: #d35400;
+    padding: 18px 55px;
+    border-radius: 35px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: 'Pacifico', cursive;
+    box-shadow: 0 0 12px #d35400;
+    animation: pulse 2.5s infinite;
+  }
+
+  #loveButton:hover {
+    background-color: #e67e22;
+    box-shadow: 0 0 20px #e67e22;
+  }
+
+  #step3 {
+    display: none;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.6em;
+    color: #d35400;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  #whatsappLink {
+    display: inline-block;
+    margin-top: 25px;
+    color: #d35400;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+    box-shadow: 0 0 10px #d35400;
+    border-radius: 15px;
+    padding: 8px 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  #whatsappLink:hover {
+    background-color: #e67e22;
+    color: white;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @keyframes glow {
+    0% {text-shadow: 0 0 5px #d35400;}
+    100% {text-shadow: 0 0 20px #ff6f00;}
+  }
+
+  @keyframes float {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-15px);}
+  }
+
+  @keyframes pulse {
+    0%, 100% {box-shadow: 0 0 12px #d35400;}
+    50% {box-shadow: 0 0 22px #ff6f00;}
+  }
+</style>
+</head>
+<body>
+
+<div id="step1">
+  <h2>Isi nama kamu</h2>
+  <input type="text" id="nameInput" placeholder="Tulis nama kamu..." />
+  <button onclick="submitName()">Kirim</button>
+</div>
+
+<div id="step2">
+  <div id="headerBox">
+    <div id="fromMadzz">dari madzz</div>
+    <div id="bearBox">
+      <!-- Gambar animasi 2 beruang bucin lucu -->
+      <svg width="170" height="140" viewBox="0 0 170 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto;display:block;">
+        <!-- Background Heart -->
+        <path fill="#FF6F91" d="M85 0c-11 0-20 8-20 18 0 10 9 18 20 18s20-8 20-18c0-10-9-18-20-18z"/>
+        <!-- Left bear body -->
+        <circle cx="50" cy="110" r="30" fill="#A0522D" />
+        <!-- Left bear head -->
+        <circle cx="50" cy="80" r="20" fill="#A0522D" />
+        <!-- Left bear ears -->
+        <circle cx="35" cy="70" r="8" fill="#8B4513" />
+        <circle cx="65" cy="70" r="8" fill="#8B4513" />
+        <!-- Left bear eyes -->
+        <circle cx="42" cy="80" r="5" fill="white" />
+        <circle cx="58" cy="80" r="5" fill="white" />
+        <circle cx="42" cy="80" r="2" fill="black" />
+        <circle cx="58" cy="80" r="2" fill="black" />
+        <!-- Right bear body -->
+        <circle cx="120" cy="110" r="30" fill="#CD853F" />
+        <!-- Right bear head -->
+        <circle cx="120" cy="80" r="20" fill="#CD853F" />
+        <!-- Right bear ears -->
+        <circle cx="105" cy="70" r="8" fill="#A0522D" />
+        <circle cx="135" cy="70" r="8" fill="#A0522D" />
+        <!-- Right bear eyes -->
+        <circle cx="112" cy="80" r="5" fill="white" />
+        <circle cx="128" cy="80" r="5" fill="white" />
+        <circle cx="112" cy="80" r="2" fill="black" />
+        <circle cx="128" cy="80" r="2" fill="black" />
+        <!-- Bear noses -->
+        <circle cx="50" cy="90" r="3" fill="black" />
+        <circle cx="120" cy="90" r="3" fill="black" />
+        <!-- Heart between bears -->
+        <path d="M85 100l10 10-10 10-10-10 10-10z" fill="#ff3b3b" />
+      </svg>
+      <div id="greeting"></div>
+    </div>
+  </div>
+  <p>Pencet tulisan <span id="loveButton">love ❤️</span></p>
+</div>
+
+<div id="step3" style="display:none;">
+  <p>Lupa mau bilang apa 🗿<br>nanti chat aja di <a id="whatsappLink" href="https://wa.me/6285876466624" target="_blank">WhatsApp</a></p>
+</div>
+
+<script>
+  function submitName() {
+    const name = document.getElementById('nameInput').value.trim();
+    if (name === '') {
+      alert('Tolong isi namamu dulu ya!');
+      return;
+    }
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('greeting').textContent = `Hayy, ${name}`;
+    document.getElementById('step2').style.display = 'block';
+  }
+
+  document.getElementById('loveButton').addEventListener('click', function() {
+    document.getElementById('step2').style.display = 'none';
+    document.getElementById('step3').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
